@@ -1,0 +1,24 @@
+{
+    "name": "vladdlviv/dataproc",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Volodymyr D",
+            "email": "vladdlviv@github.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "ext-pdo": "*",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.2.*",
+        "mikey179/vfsStream": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MuchDataProcessor\\": "src"
+        }
+    }
+}
