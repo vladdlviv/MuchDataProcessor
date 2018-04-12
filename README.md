@@ -12,6 +12,7 @@
     - edit example/suchExample.php
     - $ php example/suchExample.php path/to.file
 - Write unit tests
+    - configure OutputDbTest.php
 - If you have a GitHub/Bitbucket account please post the code in a public repository and send us a link
 - Any missing steps must have an explanation of why couldn't be completed.
 

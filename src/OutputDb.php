@@ -17,7 +17,8 @@ class OutputDb implements OutputInterface
     private $_tableName = null;
     private $_schema = [];
 
-    public function __construct($dbHost, $dbUser, $dbPassword, $dbName, $dbPrefix = '')  {
+    public function __construct($dbHost, $dbUser, $dbPassword, $dbName, $dbPrefix = '')
+    {
         $this->_dbHost = $dbHost;
         $this->_dbUser = $dbUser;
         $this->_dbPassword = $dbPassword;
@@ -39,7 +40,7 @@ class OutputDb implements OutputInterface
     /**
      * @return \PDO
      */
-    private function getConnection()
+    public function getConnection()
     {
         return $this->_pdo;
     }
@@ -116,7 +117,7 @@ class OutputDb implements OutputInterface
             $st = $this->getConnection()->prepare($sql);
             $st->execute($params);
         } catch (\Exception $e) {
-            die('DB exception '.$e);
+            throw new \Exception('DB exception '.$e);
         }
 
     }
@@ -164,7 +165,7 @@ class OutputDb implements OutputInterface
             $this->getConnection()->commit();
         } catch (\Exception $e) {
             $this->getConnection()->rollBack();
-            die('DB exception '.$e);
+            throw new \Exception('DB exception '.$e);
         }
     }
 
